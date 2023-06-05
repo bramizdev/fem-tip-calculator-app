@@ -1,44 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <!-- Displays site properly based on user's device -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Author and description -->
+    <meta name="author" content="Brayan Miza" />
+    <meta
+      name="description"
+      content="This is my solution to the Tip calculator app challenge on Frontend Mentor."
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Script -->
+    <script defer src="./script.js"></script>
+    <!-- Title -->
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="visually-hidden">Splitter</h1>
+        <p class="visually-hidden">Tip calculator app</p>
+        <img
+          class="header__logo"
+          src="./images/logo.svg"
+          alt=""
+          aria-hidden="true"
+        />
+      </header>
+      <main class="main">
+        <section class="form">
+          <h2 class="visually-hidden">Fill the form</h2>
+          <form class="form__form">
+            <div class="form__control">
+              <div class="form__control-label-wrapper">
+                <label for="bill">Bill</label>
+                <p class="error__msg"></p>
+              </div>
+              <div class="input__icon-wrapper" data-icon="dollar">
+                <input type="text" id="bill" name="bill" placeholder="0" />
+              </div>
+            </div>
+            <div class="form__control">
+              <label for="tip">Select Tip %</label>
+              <fieldset class="form__tips">
+                <div class="form__control-radio">
+                  <input type="radio" name="tip" id="tip-5-percent" value="5" />
+                  <label for="tip-5-percent" class="btn">5%</label>
+                </div>
+                <div class="form__control-radio">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="tip-10-percent"
+                    value="10"
+                  />
+                  <label for="tip-10-percent" class="btn">10%</label>
+                </div>
+                <div class="form__control-radio">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="tip-15-percent"
+                    value="15"
+                  />
+                  <label for="tip-15-percent" class="btn">15%</label>
+                </div>
+                <div class="form__control-radio">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="tip-25-percent"
+                    value="25"
+                  />
+                  <label for="tip-25-percent" class="btn">25%</label>
+                </div>
+                <div class="form__control-radio">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="tip-50-percent"
+                    value="50"
+                  />
+                  <label for="tip-50-percent" class="btn">50%</label>
+                </div>
+                <div class="form__control-radio">
+                  <label for="custom-tip" class="visually-hidden">
+                    Custom tip
+                  </label>
+                  <input
+                    type="text"
+                    name="custom-tip"
+                    id="custom-tip"
+                    placeholder="Custom"
+                  />
+                </div>
+              </fieldset>
+            </div>
+            <div class="form__control">
+              <div class="form__control-label-wrapper">
+                <label for="people">Number of People</label>
+                <p class="error__msg"></p>
+              </div>
+              <div class="input__icon-wrapper" data-icon="person">
+                <input type="text" id="people" name="people" placeholder="0" />
+              </div>
+            </div>
+          </form>
+        </section>
+        <section class="results">
+          <h2 class="visually-hidden">Check results</h2>
+          <div class="results__result-container">
+            <div class="result__wrapper">
+              <p>Tip Amount</p>
+              <small>/ person</small>
+            </div>
+            <p class="result__amount">$4.27</p>
+          </div>
+          <div class="results__result-container">
+            <div class="result__wrapper">
+              <p>Total</p>
+              <small>/ person</small>
+            </div>
+            <p class="result__amount">$32.27</p>
+          </div>
+          <button type="button" class="reset__btn">Reset</button>
+        </section>
+      </main>
+    </div>
+    <footer>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        Frontend Mentor
+      </a>
+      . Coded by
+      <a href="https://github.com/bramizdev" target="_blank">@bramizdev</a>.
+    </footer>
+  </body>
 </html>

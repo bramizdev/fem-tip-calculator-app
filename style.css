@@ -1,0 +1,284 @@
+/* ----- Custom properties ----- */
+:root {
+  --clr-primary-500: hsl(172, 67%, 45%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(189, 41%, 97%);
+  --clr-neutral-300: hsl(185, 41%, 84%);
+  --clr-neutral-500: hsl(184, 14%, 56%);
+  --clr-neutral-800: hsl(186, 14%, 43%);
+  --clr-neutral-900: hsl(183, 100%, 15%);
+
+  --ff-base: 'Space Mono', monospace;
+
+  --fw-700: 700;
+}
+
+/* ----- CSS reset ----- */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  padding: 0;
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*----- Utilities -----*/
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.btn {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-200);
+  display: block;
+  text-align: center;
+  line-height: 1.3;
+  cursor: pointer;
+  transition-property: background-color color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.btn:is(:hover, :focus-visible) {
+  background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-900);
+}
+
+/* ---- General styling ----- */
+body {
+  background-color: var(--clr-neutral-300);
+  font-family: var(--ff-base);
+  font-size: 1rem;
+}
+
+input[type='text'] {
+  width: 100%;
+  border: none;
+  text-align: right;
+  font-size: 1.5rem;
+  padding: 0.25rem 1rem;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-neutral-200);
+  border-radius: 0.25rem;
+}
+
+input[type='text']:focus {
+  outline: 2px solid var(--clr-primary-500);
+}
+
+input[type='radio']:checked + .btn {
+  background-color: var(--clr-primary-500);
+  color: var(--clr-neutral-900);
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+footer {
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+  transition: color 0.2s ease;
+}
+
+footer a:is(:hover, :focus-visible) {
+  color: var(--clr-primary-500);
+}
+
+/* ----- Header ----- */
+.header {
+  padding: 2.8rem;
+}
+
+.header__logo {
+  margin: 0 auto;
+}
+
+/* ----- Main ----- */
+.main {
+  background-color: var(--clr-neutral-100);
+  padding: 1.5rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ----- Form ----- */
+.form {
+  padding: 0.5rem;
+}
+
+.form__form {
+  display: grid;
+  gap: 2.15rem;
+}
+
+.form__control {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form__control-label-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__control > label {
+  color: var(--clr-neutral-800);
+}
+
+.form__control > div > label {
+  color: var(--clr-neutral-800);
+}
+
+.form__tips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+.input__icon-wrapper {
+  position: relative;
+}
+
+.input__icon-wrapper::before {
+  content: '';
+  position: absolute;
+  height: 17px;
+  width: 17px;
+  background-repeat: no-repeat;
+  bottom: 50%;
+  left: 1rem;
+  transform: translateY(50%);
+}
+
+.input__icon-wrapper[data-icon='dollar']::before {
+  background-image: url('/images/icon-dollar.svg');
+}
+
+.input__icon-wrapper[data-icon='person']::before {
+  background-image: url('/images/icon-person.svg');
+}
+
+/* ----- Results ----- */
+.results {
+  background-color: var(--clr-neutral-900);
+  padding: 2.5rem 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 1rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.results__result-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result__wrapper > p {
+  line-height: 1.3;
+  color: var(--clr-neutral-200);
+}
+
+.result__wrapper > small {
+  color: var(--clr-neutral-500);
+}
+
+.result__amount {
+  color: var(--clr-primary-500);
+  font-size: 30px;
+}
+
+.reset__btn {
+  all: unset;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  background-color: var(--clr-primary-500);
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 20px;
+  color: var(--clr-neutral-900);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.reset__btn:is(:hover, :focus-visible) {
+  background-color: var(--clr-neutral-300);
+}
