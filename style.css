@@ -92,6 +92,11 @@ h6 {
   border-width: 0;
 }
 
+.wrapper {
+  max-width: 512px;
+  margin: 0 auto;
+}
+
 .btn {
   font-size: 1.5rem;
   border-radius: 0.5rem;
@@ -112,6 +117,12 @@ h6 {
   color: var(--clr-neutral-900);
 }
 
+@media (min-width: 896px) {
+  .wrapper {
+    width: 100%;
+    max-width: 920px;
+  }
+}
 /* ---- General styling ----- */
 body {
   background-color: var(--clr-neutral-300);
@@ -124,10 +135,11 @@ input[type='text'] {
   border: none;
   text-align: right;
   font-size: 1.5rem;
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 0.9rem;
   color: var(--clr-neutral-900);
   background-color: var(--clr-neutral-200);
   border-radius: 0.25rem;
+  border: 2px solid transparent;
 }
 
 input[type='text']:focus {
@@ -145,6 +157,7 @@ input[type='radio'] {
 
 footer {
   text-align: center;
+  padding: 1rem;
 }
 
 footer a {
@@ -166,6 +179,14 @@ footer a:is(:hover, :focus-visible) {
   margin: 0 auto;
 }
 
+@media (min-width: 896px) {
+  .header {
+    padding: 0;
+    padding-top: 9rem;
+    padding-bottom: 5.5rem;
+  }
+}
+
 /* ----- Main ----- */
 .main {
   background-color: var(--clr-neutral-100);
@@ -177,6 +198,14 @@ footer a:is(:hover, :focus-visible) {
   gap: 1.5rem;
 }
 
+@media (min-width: 896px) {
+  .main {
+    flex-direction: row;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    gap: 2rem;
+  }
+}
 /* ----- Form ----- */
 .form {
   padding: 0.5rem;
@@ -236,13 +265,37 @@ footer a:is(:hover, :focus-visible) {
   background-image: url('/images/icon-person.svg');
 }
 
+@media (min-width: 896px) {
+  .form {
+    padding: 1rem;
+    width: 50%;
+  }
+
+  .form__form {
+    gap: 2.5rem;
+  }
+
+  .form__control {
+    gap: 0.55rem;
+  }
+
+  .form__tips {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .form__control > div > label {
+    line-height: 1.2;
+  }
+}
+
 /* ----- Results ----- */
 .results {
   background-color: var(--clr-neutral-900);
   padding: 2.5rem 1.5rem;
   padding-bottom: 1.5rem;
   border-radius: 1rem;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
@@ -281,4 +334,26 @@ footer a:is(:hover, :focus-visible) {
 
 .reset__btn:is(:hover, :focus-visible) {
   background-color: var(--clr-neutral-300);
+}
+
+@media (min-width: 896px) {
+  .results {
+    width: 50%;
+    padding: 2.75rem 2.5rem;
+    padding-bottom: 2.5rem;
+    justify-content: space-between;
+  }
+
+  .results > div {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .results__result-container {
+    align-items: center;
+  }
+
+  .result__amount {
+    font-size: 46px;
+  }
 }
