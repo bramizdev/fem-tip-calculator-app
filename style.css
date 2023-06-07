@@ -98,6 +98,7 @@ h6 {
 }
 
 .btn {
+  all: unset;
   font-size: 1.5rem;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -114,6 +115,11 @@ h6 {
 
 .btn:is(:hover, :focus-visible) {
   background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-900);
+}
+
+.btn.active {
+  background-color: var(--clr-primary-500);
   color: var(--clr-neutral-900);
 }
 
@@ -135,7 +141,7 @@ input[type='text'] {
   border: none;
   text-align: right;
   font-size: 1.5rem;
-  padding: 0.25rem 0.9rem;
+  padding: 0.25rem 0.7rem;
   color: var(--clr-neutral-900);
   background-color: var(--clr-neutral-200);
   border-radius: 0.25rem;
@@ -144,15 +150,6 @@ input[type='text'] {
 
 input[type='text']:focus {
   outline: 2px solid var(--clr-primary-500);
-}
-
-input[type='radio']:checked + .btn {
-  background-color: var(--clr-primary-500);
-  color: var(--clr-neutral-900);
-}
-
-input[type='radio'] {
-  display: none;
 }
 
 footer {

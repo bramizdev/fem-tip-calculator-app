@@ -59,46 +59,11 @@
             <div class="form__control">
               <label for="tip">Select Tip %</label>
               <fieldset class="form__tips">
-                <div class="form__control-radio">
-                  <input type="radio" name="tip" id="tip-5-percent" value="5" />
-                  <label for="tip-5-percent" class="btn">5%</label>
-                </div>
-                <div class="form__control-radio">
-                  <input
-                    type="radio"
-                    name="tip"
-                    id="tip-10-percent"
-                    value="10"
-                  />
-                  <label for="tip-10-percent" class="btn">10%</label>
-                </div>
-                <div class="form__control-radio">
-                  <input
-                    type="radio"
-                    name="tip"
-                    id="tip-15-percent"
-                    value="15"
-                  />
-                  <label for="tip-15-percent" class="btn">15%</label>
-                </div>
-                <div class="form__control-radio">
-                  <input
-                    type="radio"
-                    name="tip"
-                    id="tip-25-percent"
-                    value="25"
-                  />
-                  <label for="tip-25-percent" class="btn">25%</label>
-                </div>
-                <div class="form__control-radio">
-                  <input
-                    type="radio"
-                    name="tip"
-                    id="tip-50-percent"
-                    value="50"
-                  />
-                  <label for="tip-50-percent" class="btn">50%</label>
-                </div>
+                <button type="button" class="btn" data-tip="5">5%</button>
+                <button type="button" class="btn" data-tip="10">10%</button>
+                <button type="button" class="btn" data-tip="15">15%</button>
+                <button type="button" class="btn" data-tip="25">25%</button>
+                <button type="button" class="btn" data-tip="50">50%</button>
                 <div class="form__control-radio">
                   <label for="custom-tip" class="visually-hidden">
                     Custom tip
@@ -131,14 +96,14 @@
                 <p>Tip Amount</p>
                 <small>/ person</small>
               </div>
-              <p class="result__amount">$0.00</p>
+              <p class="result__amount" id="result-tip">$0.00</p>
             </div>
             <div class="results__result-container">
               <div class="result__wrapper">
                 <p>Total</p>
                 <small>/ person</small>
               </div>
-              <p class="result__amount">$0.00</p>
+              <p class="result__amount" id="result-total">$0.00</p>
             </div>
           </div>
           <button type="button" class="reset__btn">Reset</button>
