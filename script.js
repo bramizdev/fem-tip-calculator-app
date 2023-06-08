@@ -45,10 +45,39 @@ const displayResults = (bill, percentage, people) => {
   );
 };
 
-$form.addEventListener('input', () => {
+const displayError = (element, msg) => {
+  const formControl = element.closest('.form__control');
+  const errorMessage = formControl.querySelector('.error__msg');
+  const input = formControl.querySelector('input');
+
+  errorMessage.textContent = msg;
+  input.classList.add('input__error');
+};
+
+const removeError = (element) => {
+  const formControl = element.closest('.form__control');
+  const errorMessage = formControl.querySelector('.error__msg');
+  const input = formControl.querySelector('input');
+  errorMessage.textContent = '';
+  input.classList.remove('input__error');
+};
+
+const checkInput = (input, element) => {
+  let isInputValid = false;
+  if (Number(input) === 0) {
+    return displayError(element, 'Type a valid number');
+  } else {
+    isInputValid = true;
+  }
+  return isInputValid;
+};
+
+$form.addEventListener('input', (e) => {
+  removeError(e.target);
   const bill = Number($bill.value);
-  const percentage = Number(getPercentage()) || bill;
-  const people = Number($people.value) || 1;
+  const percentage = Number(getPercentage());
+  const people = Number($people.value);
+  if (!checkInput(bill, $bill) || !checkInput(people, $people)) return;
   displayResults(bill, percentage, people);
 });
 
@@ -66,4 +95,14 @@ $tipsContainer.addEventListener('click', (e) => {
   const percentage = Number(selected.getAttribute('data-tip'));
   const people = Number($people.value) || 1;
   displayResults(bill, percentage, people);
+});
+
+$reset.addEventListener('click', () => {
+  [$bill, $people].forEach((element) => {
+    removeError(element);
+    element.value = '';
+  });
+  $$tipBtns.forEach((btn) => btn.classList.remove('active'));
+  $resultTotal.textContent = '$0.00';
+  $resultTip.textContent = '$0.00';
 });

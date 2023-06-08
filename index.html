@@ -53,11 +53,20 @@
                 <p class="error__msg"></p>
               </div>
               <div class="input__icon-wrapper" data-icon="dollar">
-                <input type="text" id="bill" name="bill" placeholder="0" />
+                <input
+                  type="number"
+                  class="input__validation"
+                  id="bill"
+                  name="bill"
+                  placeholder="0"
+                />
               </div>
             </div>
             <div class="form__control">
-              <label for="tip">Select Tip %</label>
+              <div class="form__control-label-wrapper">
+                <label for="tip">Select Tip %</label>
+                <p class="error__msg"></p>
+              </div>
               <fieldset class="form__tips">
                 <button type="button" class="btn" data-tip="5">5%</button>
                 <button type="button" class="btn" data-tip="10">10%</button>
@@ -69,7 +78,7 @@
                     Custom tip
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     name="custom-tip"
                     id="custom-tip"
                     placeholder="Custom"
@@ -83,7 +92,13 @@
                 <p class="error__msg"></p>
               </div>
               <div class="input__icon-wrapper" data-icon="person">
-                <input type="text" id="people" name="people" placeholder="0" />
+                <input
+                  class="input__validation"
+                  type="number"
+                  id="people"
+                  name="people"
+                  placeholder="0"
+                />
               </div>
             </div>
           </form>
