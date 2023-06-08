@@ -197,8 +197,7 @@ footer a:is(:hover, :focus-visible) {
 .main {
   background-color: var(--clr-neutral-100);
   padding: 1.5rem;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
